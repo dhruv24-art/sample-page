@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css"> <!-- Ensure this line is present and correct -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="body-back">
+    <nav class="navbar background1">
+        <div class="logo"><img src="c4.png" alt="logo"/></div>
+               <ul class="navlist" id="navList">
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="menu.html" >Menu</a></li>
+            <li><a href="story.html" >Our-Story</a></li>
+            <li><a href="gallery.html" >Gallery</a></li>
+            <li><a href="contact.html" >Contact</a></li>
+            <!-- New Order Button -->
+            <li class="order-button-container"><button class="btn order-btn" onclick="open_cont()"><span>Order Now</span></button></li>
+        </ul>
+    </nav>
+
+    <section class="background firstSection">
+        <div class="mcan">
+            <canvas id="mCanvas" width="930" height="650"></canvas>      
+        </div>    
+        <div class="tBig">
+            <p class="ent">"Craving comfort food? Step into a world of buttery goodness, frosted smiles and freshly baked memories where every cookie has a story, every cake is a celebration and every bite feels just like home crafted with love, passion and sprikle of joy in every layer."</p>
+        </div>
+    </section>
+    
+    <section class="head">
+        <div class="img1">
+            <img src="web1.jpg"/>
+            <img src="web2.jpg"/>
+        </div>
+        <div class="text">
+            <h1> Discover</h1>
+            <h2>OUR STORY</h2>
+            <img src="web3.jpg"/>
+            <p>At Bake Bliss, there is an unwavering commitment to using only the highest quality ingredients. We sources the freshest butter, the finest cocoa, and the most exquisite vanilla to create cakes that would captivate taste buds and leave a lasting impression. From locally organic grown fruits to rich Belgian chocolates, no expense is spared to guarantee an unforgettable experience with every bite.</p>
+            <button class="btn" onclick="openpage2()"><span>Learn more</span></button>
+        </div>
+    </section>
+
+    <div class="space">
+        <h1>Amazing</h1>
+        <h2>DELICIOUS</h2>
+    </div>
+
+    <section class="head2">
+        <div class="text2">
+            <h1> Checkout</h1>
+            <h2>OUR MENU</h2>
+            <img src="web3.jpg"/>
+            <p>Welcome to the Sweet Luxury haven! At 
+            <font class="menu">Bake Bliss</font>
+            , we pride ourselves on offering a delectable assortment of sweet treats that will satisfy even the most discerning palate. </p>
+            <p> <font class="menu1"><i>Our menu is a symphony of flavors, ranging from luscious cakes to irresistible donuts, from creamy cheesecakes to bite-sized cake balls, and from fluffy muffins to show-stopping custom-designed masterpieces.</i></font></p>
+            <button class="btn" onclick="openPage()"><span><i class="fas fa-book-open"></i> Know more</span></button>
+        </div>
+
+        <div class="fl-box">
+            <div class="img2"><img src="web4.jpg"/></div>
+            <div class="img3"><img src="web5.jpg"/></div> 
+            <div class="img4"><img src="web6.jpg"/></div>
+            <div class="img5"><img src="web7.jpg"/></div> 
+        </div>
+    </section>
+
+    <section class="trd-sec">
+        <div class="icon">
+            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="end">
+            <h1>Contact</h1>
+            <h3>Herbal Park, Sector-26, Panchkula, Haryana</h3>
+            <h4>info@bakebliss.com</h4>
+            <h4>+91-7082010305</h4>
+        </div>
+        <div class="end1">
+            <h1>Bake Bliss</h1>
+            <h3>Cakes</h3>
+            <h4>Cheesecakes</h4>
+            <h4>Donuts</h4>
+            <h4>Pastry</h4>
+            <h4>Chocolate</h4>
+            <h4>Home Delivery in Panchkula</h4>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <div class="end">
+            <h1>Working Hours</h1>
+            <h3>Mon-Fri...............8AM To 8PM</h3>
+            <h4>Sat........................8AM To 6PM</h4>
+            <h4>Sun.....................11AM To 4PM</h4>
+        </div>
+    </section>
+
+</body>
+
+<script>
+    // Canvas text rendering - NOW RESPONSIVE
+    window.onload = function() {
+        adjustCanvasText(); // Initial call
+        window.addEventListener('resize', adjustCanvasText); // Adjust on window resize
+    };
+
+    function adjustCanvasText() {
+        var canvas = document.getElementById("mCanvas");
+        if (canvas) {
+            var ctext = canvas.getContext("2d");
+            var x, y, fontSize;
+
+            // Clear previous drawing to avoid overlapping text
+            ctext.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Dynamically adjust canvas dimensions based on its CSS size
+            // This is crucial for proper scaling of the text
+            var computedStyle = getComputedStyle(canvas);
+            canvas.width = parseFloat(computedStyle.width);
+            canvas.height = parseFloat(computedStyle.height);
+
+            // Determine font size and position based on current canvas width
+            if (canvas.width <= 480) {
+                fontSize = "80pt";
+                x = canvas.width * 0.05; // 5% from left
+                y = canvas.height * 0.9; // 90% from top
+            } else if (canvas.width <= 768) {
+                fontSize = "120pt";
+                x = canvas.width * 0.05;
+                y = canvas.height * 0.9;
+            } else if (canvas.width <= 1200) {
+                fontSize = "150pt";
+                x = canvas.width * 0.05;
+                y = canvas.height * 0.9;
+            } else {
+                // Default for larger screens (original values)
+                fontSize = "180pt";
+                x = 40;
+                y = 620;
+            }
+
+            ctext.font = fontSize + " Edwardian Script ITC";
+            ctext.lineWidth = 4;
+            ctext.strokeStyle = "white";
+            ctext.strokeText("Bake Bliss", x, y);
+        }
+    }
+
+    // Navigation page functions
+    function openPage() {
+        window.location.href = "menu.html";
+    }
+
+    function openpage2() {
+        window.location.href = "story.html";
+    }
+
+    function open_cont() {
+        window.location.href = "contact.html";
+    }
+    
+    
+
+</script>
+
+</html>
