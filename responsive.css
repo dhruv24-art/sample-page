@@ -10,7 +10,7 @@
     /* Body Background */
     .body-back {
         background-size: cover;
-        background-position: center;
+        background-position: center;        
         background-attachment: scroll; /* Fixed background not ideal for mobile */
     }
 
@@ -92,7 +92,7 @@
     .img1 {
         width: 100%;
         padding: 20px;
-        margin-left: 0;
+        margin-left: 30px;
     }
 
     .img1 img {
