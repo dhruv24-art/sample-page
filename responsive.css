@@ -1,653 +1,316 @@
-/* ===== RESPONSIVE.CSS - Complete Mobile Responsiveness ===== */
-
-/* Mobile Navigation Toggle */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Large Desktop Screens (1200px and above) */
-@media screen and (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
+/* Mobile and Tablet Responsive Styles */
+@media only screen and (max-width: 1024px) {
+    /* Body Background */
+    .body-back {
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll; /* Fixed background not ideal for mobile */
     }
-}
 
-/* Desktop and Laptop Screens (992px to 1199px) */
-@media screen and (max-width: 1199px) {
-    .navlist li {
-        padding: 15px 25px;
-    }
-    
-    .order-button-container {
-        margin-left: 100px;
-    }
-    
-    .tBig {
-        padding: 50px;
-        width: 400px;
-        margin-top: 300px;
-    }
-    
-    .img1 {
-        padding: 60px;
-        width: 500px;
-    }
-    
-    .img1 img {
-        width: 300px;
-        height: 350px;
-    }
-    
-    .text {
-        width: 350px;
-    }
-    
-    .text h1 {
-        margin-left: 100px;
-        margin-top: 150px;
-        font-size: 35px;
-    }
-    
-    .text h2 {
-        font-size: 45px;
-        margin-left: 60px;
-    }
-    
-    .text p {
-        margin-left: 70px;
-        font-size: 16px;
-    }
-    
-    .text button {
-        margin-left: 120px;
-    }
-}
-
-/* Tablet Screens (768px to 991px) */
-@media screen and (max-width: 991px) {
+    /* Navbar */
     .navbar {
         flex-direction: column;
-        padding: 10px;
+        padding: 10px 0;
     }
-    
-    .logo {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    
+
     .navlist {
         flex-direction: column;
+        align-items: center;
         width: 100%;
-        gap: 10px;
     }
-    
+
     .navlist li {
         padding: 10px 20px;
-        text-align: center;
     }
-    
+
+    .navlist li a {
+        font-size: 14px;
+        padding-left: 0;
+    }
+
+    .logo {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        width: 60px;
+        border: 1px solid white;
+    }
+
     .order-button-container {
         margin-left: 0;
         padding-right: 0;
+        margin-top: 10px;
     }
-    
+
+    .order-btn {
+        width: 100px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    /* First Section */
     .firstSection {
         flex-direction: column;
         height: auto;
         padding: 20px;
     }
-    
-    .mcan {
-        order: 1;
+
+    .tBig {
         width: 100%;
+        padding: 20px;
+        margin-top: 20px;
+        font-size: 14px;
         text-align: center;
     }
-    
+
+    .tBig p {
+        animation: none; /* Disable animations for better mobile performance */
+    }
+
     #mCanvas {
         width: 100%;
-        max-width: 600px;
-        height: 300px;
+        height: auto;
+        animation: none;
     }
-    
-    .tBig {
-        order: 2;
-        width: 100%;
-        padding: 30px;
-        margin-top: 20px;
-        text-align: center;
-    }
-    
+
+    /* Head Section */
     .head {
         flex-direction: column;
         height: auto;
-        padding: 40px 20px;
+        padding: 20px;
     }
-    
+
     .img1 {
         width: 100%;
         padding: 20px;
-        justify-content: center;
         margin-left: 0;
     }
-    
+
     .img1 img {
-        width: 250px;
-        height: 300px;
-        margin: 10px;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 20px;
     }
-    
+
     .text {
         width: 100%;
         text-align: center;
-        padding: 20px;
+        margin-top: 20px;
     }
-    
-    .text h1 {
-        margin-left: 0;
-        margin-top: 40px;
-        font-size: 32px;
-    }
-    
-    .text h2 {
-        margin-left: 0;
-        font-size: 40px;
-    }
-    
-    .text img {
-        margin-left: 0;
-    }
-    
-    .text p {
-        margin-left: 0;
-        font-size: 16px;
-        text-align: center;
-        padding: 0 20px;
-    }
-    
-    .text button {
-        margin-left: 0;
-    }
-    
-    .space h1 {
-        margin-left: 0;
-        text-align: center;
-        font-size: 50px;
-    }
-    
-    .space h2 {
-        margin-left: 0;
-        text-align: center;
-        font-size: 50px;
-    }
-    
-    .head2 {
-        flex-direction: column;
-        height: auto;
-        padding: 40px 20px;
-    }
-    
-    .text2 {
-        width: 100%;
-        margin-left: 0;
-        text-align: center;
-        order: 2;
-    }
-    
-    .text2 h1 {
-        margin-left: 0;
-        margin-top: 40px;
-        font-size: 32px;
-    }
-    
-    .text2 h2 {
-        margin-left: 0;
-        font-size: 40px;
-    }
-    
-    .text2 img {
-        margin-left: 0;
-    }
-    
-    .text2 p {
-        margin-left: 0;
-        text-align: center;
-        padding: 0 20px;
-    }
-    
-    .text2 button {
-        margin-left: 0;
-    }
-    
-    .fl-box {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        order: 1;
-    }
-    
-    .img2 img, .img3 img, .img4 img, .img5 img {
-        margin: 20px 0;
-        margin-left: 0;
-        width: 280px;
-        height: 200px;
-    }
-    
-    .trd-sec {
-        flex-direction: column;
-        height: auto;
-        padding: 40px 20px;
-        text-align: center;
-    }
-    
-    .icon {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-bottom: 30px;
-    }
-    
-    .icon i {
-        margin: 0 !important;
-    }
-    
-    .end, .end1 {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    
-    .end h1, .end1 h1 {
-        margin-left: 0;
-        font-size: 40px;
-        padding-top: 20px;
-    }
-    
-    .end h3, .end h4, .end1 h3, .end1 h4 {
-        margin-left: 0;
-        font-size: 18px;
-    }
-    
-    .end1 i {
-        margin-left: 10px !important;
-        margin-top: 20px !important;
-    }
-}
 
-/* Mobile Landscape and Small Tablets (576px to 767px) */
-@media screen and (max-width: 767px) {
-    .navbar {
-        position: relative;
-    }
-    
-    .nav-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-    
-    .navlist {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        z-index: 1000;
-    }
-    
-    .navlist.active {
-        display: flex;
-    }
-    
-    .navlist li {
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .order-btn {
-        width: 100px;
-        font-size: 16px;
-    }
-    
-    .firstSection {
-        padding: 10px;
-    }
-    
-    #mCanvas {
-        height: 250px;
-    }
-    
-    .tBig {
-        padding: 20px;
-        font-size: 15px;
-    }
-    
-    .img1 {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .img1 img {
-        width: 200px;
-        height: 250px;
-        margin: 5px;
-    }
-    
     .text h1 {
+        margin-left: 0;
         font-size: 28px;
         margin-top: 20px;
     }
-    
-    .text h2 {
-        font-size: 35px;
-    }
-    
-    .text p {
-        font-size: 15px;
-        padding: 0 10px;
-    }
-    
-    .space {
-        height: 150px;
-    }
-    
-    .space h1 {
-        font-size: 40px;
-        margin-top: 40px;
-    }
-    
-    .space h2 {
-        font-size: 40px;
-    }
-    
-    .text2 h1 {
-        font-size: 28px;
-    }
-    
-    .text2 h2 {
-        font-size: 35px;
-    }
-    
-    .text2 p {
-        font-size: 15px;
-        padding: 0 10px;
-    }
-    
-    .fl-box img {
-        width: 250px;
-        height: 180px;
-    }
-    
-    .trd-sec {
-        padding: 20px 10px;
-    }
-    
-    .end h1, .end1 h1 {
-        font-size: 32px;
-    }
-    
-    .end h3, .end h4, .end1 h3, .end1 h4 {
-        font-size: 16px;
-        margin-top: 10px;
-    }
-    
-    .icon {
-        gap: 20px;
-    }
-    
-    .icon i {
-        font-size: 20px;
-    }
-    
-    .end1 i {
-        font-size: 25px;
-        margin-left: 5px !important;
-    }
-}
 
-/* Mobile Portrait (up to 575px) */
-@media screen and (max-width: 575px) {
-    .logo img {
-        width: 60px;
-    }
-    
-    .navlist li a {
-        font-size: 16px;
-    }
-    
-    .order-btn {
-        width: 90px;
-        height: 35px;
-        font-size: 14px;
-    }
-    
-    #mCanvas {
-        height: 200px;
-    }
-    
-    .tBig {
-        padding: 15px;
-        font-size: 14px;
-    }
-    
-    .img1 img {
-        width: 180px;
-        height: 220px;
-    }
-    
-    .text h1 {
-        font-size: 24px;
-    }
-    
     .text h2 {
-        font-size: 30px;
+        font-size: 32px;
+        margin-left: 0;
     }
-    
+
     .text p {
-        font-size: 14px;
+        font-size: 16px;
+        margin-left: 0;
+        padding: 0 20px;
     }
-    
-    .text button, .text2 button {
+
+    .text button {
+        margin-left: 0;
         width: 140px;
         height: 35px;
         font-size: 16px;
     }
-    
+
+    .text img {
+        margin-left: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Space Section */
     .space {
-        height: 120px;
+        height: auto;
+        text-align: center;
+        padding: 20px;
     }
-    
+
     .space h1 {
-        font-size: 32px;
-        margin-top: 30px;
+        margin-left: 0;
+        font-size: 36px;
+        letter-spacing: 4px;
     }
-    
+
     .space h2 {
+        margin-left: 0;
         font-size: 32px;
+        margin-top: 10px;
     }
-    
+
+    /* Head2 Section */
+    .head2 {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .text2 {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+        margin-top: 20px;
+    }
+
     .text2 h1 {
+        margin-left: 0;
+        font-size: 28px;
+        margin-top: 20px;
+    }
+
+    .text2 h2 {
+        font-size: 32px;
+        margin-left: 0;
+    }
+
+    .text2 p {
+        font-size: 16px;
+        margin-left: 0;
+        padding: 0 20px;
+    }
+
+    .text2 button {
+        margin-left: 0;
+        width: 140px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .text2 img {
+        margin-left: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    .fl-box {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .img2 img, .img3 img, .img4 img, .img5 img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .img4 img, .img5 img {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    /* Third Section */
+    .trd-sec {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .end, .end1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .end h1, .end1 h1 {
+        font-size: 32px;
+        margin-left: 0;
+        padding-top: 20px;
+    }
+
+    .end h3, .end1 h3, .end h4, .end1 h4 {
+        font-size: 16px;
+        margin-left: 0;
+        padding: 10px 20px;
+    }
+
+    .fa-location-dot, .fa-envelope, .fa-phone {
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    .fa-facebook, .fa-twitter, .fa-instagram, .fa-whatsapp {
+        margin: 10px;
         font-size: 24px;
     }
-    
-    .text2 h2 {
-        font-size: 30px;
-    }
-    
-    .text2 p {
-        font-size: 14px;
-    }
-    
-    .fl-box img {
-        width: 220px;
-        height: 160px;
-    }
-    
-    .end h1, .end1 h1 {
-        font-size: 28px;
-    }
-    
-    .end h3, .end h4, .end1 h3, .end1 h4 {
-        font-size: 14px;
-    }
-    
-    .icon i {
-        font-size: 18px;
-    }
-    
-    .end1 i {
-        font-size: 22px;
+
+    .icon {
+        width: 100%;
+        text-align: center;
     }
 }
 
-/* Extra Small Mobile (up to 375px) */
-@media screen and (max-width: 375px) {
-    .logo img {
-        width: 50px;
+/* Specific Mobile Styles */
+@media only screen and (max-width: 600px) {
+    .navlist li {
+        padding: 8px 15px;
     }
-    
+
+    .navlist li a {
+        font-size: 12px;
+    }
+
+    .order-btn {
+        width: 90px;
+        height: 30px;
+        font-size: 14px;
+    }
+
     .tBig {
-        padding: 10px;
-        font-size: 13px;
+        font-size: 12px;
+        padding: 15px;
     }
-    
-    #mCanvas {
-        height: 180px;
-    }
-    
-    .img1 img {
-        width: 160px;
-        height: 200px;
-    }
-    
+
     .text h1, .text2 h1 {
-        font-size: 22px;
+        font-size: 24px;
     }
-    
+
     .text h2, .text2 h2 {
-        font-size: 26px;
+        font-size: 28px;
     }
-    
+
     .text p, .text2 p {
-        font-size: 13px;
+        font-size: 14px;
     }
-    
+
     .text button, .text2 button {
         width: 120px;
-        height: 32px;
+        height: 30px;
         font-size: 14px;
     }
-    
-    .space h1, .space h2 {
+
+    .space h1 {
         font-size: 28px;
     }
-    
-    .fl-box img {
-        width: 200px;
-        height: 140px;
-    }
-    
-    .end h1, .end1 h1 {
+
+    .space h2 {
         font-size: 24px;
     }
-    
-    .end h3, .end h4, .end1 h3, .end1 h4 {
-        font-size: 13px;
-    }
-    
-    .end1 i {
-        font-size: 20px;
-    }
-}
 
-/* Canvas Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .mcan {
-        display: flex;
-        justify-content: center;
-        width: 100%;
+    .end h1, .end1 h1 {
+        font-size: 28px;
     }
-    
-    #mCanvas {
-        max-width: 100%;
-        width: 90vw;
-    }
-}
 
-/* Utility Classes for Better Responsiveness */
-.text-center-mobile {
-    text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-    .text-center-mobile {
-        text-align: center !important;
-    }
-}
-
-/* Smooth Transitions for All Elements */
-* {
-    transition: all 0.3s ease;
-}
-
-/* Ensure images are responsive */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Fix for very small screens */
-@media screen and (max-width: 320px) {
-    .navbar {
-        padding: 5px;
-    }
-    
-    .logo img {
-        width: 40px;
-    }
-    
-    .navlist li a {
+    .end h3, .end1 h3, .end h4, .end1 h4 {
         font-size: 14px;
-    }
-    
-    .order-btn {
-        width: 80px;
-        height: 30px;
-        font-size: 12px;
-    }
-    
-    .tBig {
-        font-size: 12px;
-        padding: 8px;
-    }
-    
-    .text h1, .text2 h1 {
-        font-size: 20px;
-    }
-    
-    .text h2, .text2 h2 {
-        font-size: 24px;
-    }
-    
-    .space h1, .space h2 {
-        font-size: 24px;
-    }
-    
-    .fl-box img {
-        width: 180px;
-        height: 120px;
-    }
-    
-    .end h1, .end1 h1 {
-        font-size: 22px;
     }
 }
