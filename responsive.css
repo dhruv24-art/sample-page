@@ -287,7 +287,9 @@
     .text h2, .text2 h2 {
         font-size: 28px;
     }
-
+.img1{
+    flex-direction: column;
+}
     .text p, .text2 p {
         font-size: 14px;
     }
